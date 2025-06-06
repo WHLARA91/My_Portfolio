@@ -200,20 +200,22 @@ body.scrolled .back-to-top {
 
 .boton-flotante-cv {
   position: fixed;
-  bottom: 100px; /* Para que no se cruce con el botón de volver arriba */
+  bottom: 100px;
   right: 20px;
   background-color: #2196f3;
   color: #fff;
-  padding: 15px 18px;
+  padding: 16px;
   border-radius: 50%;
   text-decoration: none;
-  font-size: 24px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease;
+  font-size: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease;
   z-index: 1000;
 }
 
 .boton-flotante-cv:hover {
   background-color: #1976d2;
+  transform: scale(1.1);
 }
+
 
