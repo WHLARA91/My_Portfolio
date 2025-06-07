@@ -23,6 +23,21 @@ body {
   padding: 10px 20px;
   background-color: #111;
 }
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
 }
 .conten-flex p {
   max-width: 450px;
@@ -220,20 +235,5 @@ body.scrolled .back-to-top {
   transform: scale(1.1);
 }
 
-.logo img {
-  height: 50px;
-  width: auto;
-}
-
-nav ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-}
 
 
