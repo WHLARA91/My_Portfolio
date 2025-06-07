@@ -16,28 +16,43 @@ body {
   background: #f5f5f5;
   color: #333;
 }
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  background-color: #111;
-}
-.logo img {
-  height: 50px;
-  width: auto;
+header {
+  background-color: #0a0a0a; /* o el color que uses */
+  padding: 20px;
 }
 
-nav ul {
+.header-container {
   display: flex;
-  gap: 20px;
-  list-style: none;
+  align-items: center;
+  gap: 20px; /* espacio entre logo y contenido */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo img {
+  width: 80px;
+  height: auto;
+}
+
+.header-content {
+  color: white; /* o el color que uses para el texto */
+}
+
+.header-content h1 {
+  margin: 0;
+  font-size: 2rem;
 }
 
 nav a {
-  color: white;
+  margin-right: 15px;
+  color: #00f7ff;
   text-decoration: none;
 }
+
+nav a:hover {
+  text-decoration: underline;
+}
+
 }
 .conten-flex p {
   max-width: 450px;
