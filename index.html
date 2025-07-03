@@ -138,7 +138,11 @@
   <!-- AOS JS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init();
+  AOS.init({
+    duration: 1000,
+    once: true, 
+    offset: 120,
+  });
 </script>
 <script src="script.js"></script>
 <a href="cv_wilson.pdf" download class="boton-flotante-cv" title="Descargar hoja de vida">
