@@ -6,6 +6,8 @@
   <title>Portafolio de Wilson Herrera</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="Styles.css" />
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style> html { scroll-behavior: smooth; } </style>
 </head>
 <body>
@@ -27,7 +29,7 @@
 </header>
 
   <section class="conten-flex">
-  <section id="perfil">
+  <section id="perfil" data-aos="fade-up">
     <h2>Perfil Personal</h2>
     <img src="Foto_3x4.jpg" alt="Foto de Wilson" />
     <br>
@@ -133,10 +135,13 @@
 </div>
     <p>&copy; 2025 Wilson Herrera</p>
 </footer>
-
-  <script src="script.js"></script>
-  <a href="cv_wilson.pdf" download class="boton-flotante-cv" title="Descargar hoja de vida">
-  <i class="fas fa-file-download"></i> </a>
-  
+  <!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script src="script.js"></script>
+<a href="cv_wilson.pdf" download class="boton-flotante-cv" title="Descargar hoja de vida">
+<i class="fas fa-file-download"></i> </a>
 </body>
 </html>
