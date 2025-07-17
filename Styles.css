@@ -79,6 +79,9 @@ nav a:hover {
 }
 
 footer {
+  background: #b6b0b0;
+  color: #090101;
+  padding: 20px 0;
   text-align: center;
 }
 
@@ -176,7 +179,6 @@ progress::-webkit-progress-value {
   border-radius: 10px;
 }
 
-/* Línea de tiempo */
 .timeline {
   list-style: none;
   padding: 0;
