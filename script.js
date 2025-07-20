@@ -1,18 +1,46 @@
-document.getElementById('contactForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-  const formData = new FormData(this);
-  const data = Object.fromEntries(formData.entries());
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  const nombre = document.getElementById("nombre").value.trim();
+  const correo = document.getElementById("correo").value.trim();
+  const mensaje = document.getElementById("mensaje").value.trim();
+  const error = document.getElementById("mensaje-error");
 
-  console.log("Simulando POST:");
-  console.log(JSON.stringify(data));
+  // Validación del correo con expresión regular
+  const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  console.log("Simulando GET:");
-  console.log("Nombre:", data.nombre);
-  console.log("Email:", data.email);
+  if (nombre === "" || correo === "" || mensaje === "") {
+    e.preventDefault();
+    error.textContent = "Por favor completa todos los campos.";
+    error.style.display = "block";
+    return;
+  }
 
-  data.mensaje = "[Actualizado] " + data.mensaje;
-  console.log("Simulando PUT:");
-  console.log(JSON.stringify(data));
+  if (!regexCorreo.test(correo)) {
+    e.preventDefault();
+    error.textContent = "Por favor introduce un correo válido.";
+    error.style.display = "block";
+    return;
+  }
+
+  // Si todo está correcto
+  error.style.display = "none";
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const message = document.getElementById("form-message");
+
+  form.addEventListener("submit", function (e) {
+    if (!form.checkValidity()) {
+      e.preventDefault();
+      message.style.display = "block";
+      message.style.color = "red";
+      message.textContent = "Por favor completa correctamente todos los campos.";
+    } else {
+      message.style.display = "block";
+      message.style.color = "green";
+      message.textContent = "Enviando mensaje... ✅";
+    }
+  });
 });
 
 window.addEventListener("scroll", () => {
