@@ -1,3 +1,4 @@
+// Validación del formulario
 document.getElementById("contactForm").addEventListener("submit", function (e) {
   const nombre = document.getElementById("nombre").value.trim();
   const correo = document.getElementById("correo").value.trim();
@@ -36,13 +37,25 @@ document.addEventListener("DOMContentLoaded", () => {
       message.style.color = "red";
       message.textContent = "Por favor completa correctamente todos los campos.";
     } else {
-      message.style.display = "block";
-      message.style.color = "green";
-      message.textContent = "Enviando mensaje... ✅";
+      e.preventDefault(); // Evitamos que se recargue la página
+
+      // Mostrar SweetAlert2 de confirmación automática
+      Swal.fire({
+        title: '¡Mensaje enviado!',
+        text: 'Gracias por contactarme. Te responderé pronto.',
+        icon: 'success',
+        showConfirmButton: false,
+        timer: 3000, // 3 segundos
+        timerProgressBar: true
+      });
+
+      form.reset(); // Limpia el formulario
+      message.style.display = "none"; // Oculta cualquier mensaje adicional
     }
   });
 });
 
+// Efecto al hacer scroll
 window.addEventListener("scroll", () => {
   if (window.scrollY > 300) {
     document.body.classList.add("scrolled");
@@ -51,6 +64,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// Loader al cargar
 window.addEventListener("load", function () {
   const loader = document.getElementById("loader");
   loader.style.opacity = "0";
